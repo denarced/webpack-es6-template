@@ -1,0 +1,10 @@
+# file patterns
+
+# Vim swap files
+*.swp
+
+# directories
+
+# Build directory
+dist/
+node_modules/

@@ -1,0 +1,10 @@
+syntax: glob
+
+# FILE PATTERNS
+
+*.swp
+
+# DIRECTORIES
+
+dist/
+node_modules/
