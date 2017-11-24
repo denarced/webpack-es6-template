@@ -1,10 +1,13 @@
-# file patterns
+# FILE PATTERNS
 
 # Vim swap files
 *.swp
 
-# directories
+# DIRECTORIES
 
+# Istanbul lcov coverage output
+.nyc_output/
+coverage/
 # Build directory
 dist/
 node_modules/
