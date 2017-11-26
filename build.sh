@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./test_once.sh
+./test.sh
 
 if [ $? -ne 0 ]
 then
