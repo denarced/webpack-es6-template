@@ -24,6 +24,17 @@ module.exports = {
                 exclude: /node_modules/,
                 test: /\.scss$/,
                 use: ["style-loader", "css-loader", "sass-loader"]
+            },
+            {
+                enforce: "pre",
+                exclude: /node_modules/,
+                test: /\.js$/,
+                use: [{
+                    loader: "jshint-loader",
+                    options: {
+                        failOnHint: true
+                    }
+                }]
             }
         ]
     },
