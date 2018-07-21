@@ -7,6 +7,6 @@
         }
     },
     "presets": [
-        "latest"
+        "env", "react"
     ]
 }

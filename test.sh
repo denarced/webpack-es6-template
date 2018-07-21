@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO Change to only have option --once
+
 watch=""
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]
 then
@@ -13,6 +15,7 @@ then
     watch="-w"
 fi
 
+# TODO Swap to jest
 nyc=./node_modules/.bin/nyc
 mocha=./node_modules/.bin/mocha
 crossenv=./node_modules/.bin/cross-env

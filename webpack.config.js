@@ -1,18 +1,19 @@
 var htmlWebpackPlugin = require("html-webpack-plugin"),
     path = require("path");
 
+// TODO Use CSS modules => change css-loader to css-loader?modules
 module.exports = {
-    entry: path.join(__dirname, "src", "main.js"),
+    entry: path.join(__dirname, "src", "app.jsx"),
     output: {
         path: path.join(__dirname, "dist"),
-        filename: "bundle.js"
+        filename: "bundle-[hash].js"
     },
 
     module: {
         rules: [{
                 exclude: /node_modules/,
                 loader: "babel-loader",
-                test: /\.js$/
+                test: /\.(js|jsx)$/
             },
             {
                 exclude: /node_modules/,
@@ -28,7 +29,7 @@ module.exports = {
             {
                 enforce: "pre",
                 exclude: /node_modules/,
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 use: [{
                     loader: "jshint-loader",
                     options: {

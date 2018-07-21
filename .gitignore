@@ -5,6 +5,8 @@
 
 # DIRECTORIES
 
+# TODO Change description once swapped to jest as Istanbul is no longer used
+# directly.
 # Istanbul lcov coverage output
 .nyc_output/
 coverage/

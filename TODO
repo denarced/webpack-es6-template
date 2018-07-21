@@ -1,0 +1,2 @@
+TODO Add jest config jest.config.js with options moduleDirectories and testMatch
+TODO Remove env due to switching to jest in .babelrc

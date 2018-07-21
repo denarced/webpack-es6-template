@@ -1,13 +1,18 @@
 {
     "author": "denarced",
     "dependencies": {
-        "jquery": "3.2.1"
+        "babel-polyfill": "6.26.0",
+        "react": "16.4.1",
+        "react-dom": "16.4.1"
     },
+    "TODO Remove babel-plugin-istanbul chai mocha nyc": 0,
+    "TODO Add jest and babel-jest": 0,
     "devDependencies": {
         "babel-core": "6.26.0",
         "babel-loader": "7.1.2",
         "babel-plugin-istanbul": "4.1.5",
-        "babel-preset-latest": "6.24.1",
+        "babel-preset-env": "1.7.0",
+        "babel-preset-react": "6.24.1",
         "chai": "4.1.2",
         "cross-env": "5.1.1",
         "css-loader": "0.28.7",
@@ -24,6 +29,7 @@
     },
     "license": "MIT",
     "name": "webpack-es6-template",
+    "TODO nyc can be remove completely once swapped to jest": 0,
     "nyc": {
         "instrument": false,
         "reporter": [
