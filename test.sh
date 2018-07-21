@@ -1,26 +1,16 @@
-#!/bin/bash
+#!/bin/sh
 
-# TODO Change to only have option --once
-
-watch=""
-if [ "$1" == "-h" ] || [ "$1" == "--help" ]
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]
 then
-    echo "Usage: $0 [options]"
-    echo "Options:"
-    echo "  -h, --help        Show this output"
-    echo "  -w, --watch       Watch files for change"
+    echo "Usage: $0 [--once|-o]"
+    echo "       --once|-o Run tests only once and exit"
     exit 1
-elif [ "$1" == "-w" ] || [ "$1" == "--watch" ]
-then
-    watch="-w"
 fi
 
-# TODO Swap to jest
-nyc=./node_modules/.bin/nyc
-mocha=./node_modules/.bin/mocha
-crossenv=./node_modules/.bin/cross-env
+watch="--watch"
+if [ "$1" = "--once" ] || [ "$1" = "-o" ]
+then
+    watch=""
+fi
 
-$crossenv NODE_ENV=test \
-    $nyc $mocha \
-        --require babel-core/register \
-        $watch
+npx jest --coverage $watch

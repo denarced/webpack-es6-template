@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# TODO Add --once parameter once changed to jest
-./test.sh
+./test.sh --once
 
 if [ $? -ne 0 ]
 then
@@ -9,5 +8,4 @@ then
     exit 1
 fi
 
-# TODO Use npx instead of .bin reference
-./node_modules/.bin/webpack -p
+npx webpack -p

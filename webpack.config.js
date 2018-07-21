@@ -1,7 +1,6 @@
 var htmlWebpackPlugin = require("html-webpack-plugin"),
     path = require("path");
 
-// TODO Use CSS modules => change css-loader to css-loader?modules
 module.exports = {
     entry: path.join(__dirname, "src", "app.jsx"),
     output: {
@@ -24,19 +23,19 @@ module.exports = {
             {
                 exclude: /node_modules/,
                 test: /\.scss$/,
-                use: ["style-loader", "css-loader", "sass-loader"]
-            },
-            {
-                enforce: "pre",
-                exclude: /node_modules/,
-                test: /\.(js|jsx)$/,
-                use: [{
-                    loader: "jshint-loader",
-                    options: {
-                        failOnHint: true
-                    }
-                }]
-            }
+                use: ["style-loader", "css-loader?modules", "sass-loader"]
+            }//,
+            // {
+            //     enforce: "pre",
+            //     exclude: /node_modules/,
+            //     test: /\.(js|jsx)$/,
+            //     use: [{
+            //         loader: "jshint-loader",
+            //         options: {
+            //             failOnHint: true
+            //         }
+            //     }]
+            // }
         ]
     },
     plugins: [
