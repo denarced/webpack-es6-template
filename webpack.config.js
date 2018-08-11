@@ -1,3 +1,6 @@
+// @format
+/* eslint-env node */
+
 var htmlWebpackPlugin = require("html-webpack-plugin"),
     path = require("path");
 
@@ -9,7 +12,8 @@ module.exports = {
     },
 
     module: {
-        rules: [{
+        rules: [
+            {
                 exclude: /node_modules/,
                 loader: "babel-loader",
                 test: /\.(js|jsx)$/
@@ -24,18 +28,12 @@ module.exports = {
                 exclude: /node_modules/,
                 test: /\.scss$/,
                 use: ["style-loader", "css-loader?modules", "sass-loader"]
-            }//,
-            // {
-            //     enforce: "pre",
-            //     exclude: /node_modules/,
-            //     test: /\.(js|jsx)$/,
-            //     use: [{
-            //         loader: "jshint-loader",
-            //         options: {
-            //             failOnHint: true
-            //         }
-            //     }]
-            // }
+            },
+            {
+                exclude: /node_modules/,
+                test: /\.(js|jsx)$/,
+                use: ["babel-loader", "eslint-loader"]
+            }
         ]
     },
     plugins: [

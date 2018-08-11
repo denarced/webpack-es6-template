@@ -1,3 +1,5 @@
 #!/bin/bash
 
-vim test/*.js src/*.{html,scss,js} webpack.config.js
+vim `find src/ -type f` \
+    `find test/ -type f` \
+    webpack.config.js

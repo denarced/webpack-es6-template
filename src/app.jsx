@@ -10,16 +10,13 @@ class App extends React.Component {
     render() {
         let a = 3,
             b = 4;
-        /* jshint ignore:start */
         return (
             <div>
-                {a} + {b} = {a + b}
+                {a} + {b} = {sum(a, b)}
             </div>
         );
-        /* jshint ignore:end */
     }
 }
 
-/* jshint ignore:start */
+// eslint-disable-next-line no-undef
 render(<App />, document.getElementById("app"));
-/* jshint ignore:end */
