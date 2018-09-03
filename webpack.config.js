@@ -1,7 +1,8 @@
 // @format
 /* eslint-env node */
 
-var htmlWebpackPlugin = require("html-webpack-plugin"),
+var cleanWebpackPlugin = require("clean-webpack-plugin"),
+    htmlWebpackPlugin = require("html-webpack-plugin"),
     path = require("path");
 
 module.exports = {
@@ -42,7 +43,8 @@ module.exports = {
             inject: "body",
             minify: false,
             xhtml: true
-        })
+        }),
+        new cleanWebpackPlugin(["dist"])
     ],
     devServer: {
         contentBase: path.join(__dirname, "src"),
@@ -53,5 +55,9 @@ module.exports = {
         proxy: {
             "/api": "http://localhost:8080"
         }
+    },
+    resolve: {
+        extensions: [".js", ".jsx", ".json"],
+        modules: [path.join(__dirname, "src"), "node_modules"]
     }
 };

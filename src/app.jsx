@@ -4,7 +4,7 @@ import "babel-polyfill";
 import React from "react";
 import { render } from "react-dom";
 
-import { sum } from "./sum";
+import { sum } from "sum";
 
 class App extends React.Component {
     render() {
@@ -18,5 +18,4 @@ class App extends React.Component {
     }
 }
 
-// eslint-disable-next-line no-undef
 render(<App />, document.getElementById("app"));
