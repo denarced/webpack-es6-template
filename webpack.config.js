@@ -1,8 +1,8 @@
 // @format
 /* eslint-env node */
 
-var cleanWebpackPlugin = require("clean-webpack-plugin"),
-    htmlWebpackPlugin = require("html-webpack-plugin"),
+var CleanWebpackPlugin = require("clean-webpack-plugin"),
+    HtmlWebpackPlugin = require("html-webpack-plugin"),
     path = require("path");
 
 module.exports = {
@@ -38,13 +38,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new htmlWebpackPlugin({
+        new HtmlWebpackPlugin({
             template: "./src/index.html",
             inject: "body",
             minify: false,
             xhtml: true
         }),
-        new cleanWebpackPlugin(["dist"])
+        new CleanWebpackPlugin()
     ],
     devServer: {
         contentBase: path.join(__dirname, "src"),
